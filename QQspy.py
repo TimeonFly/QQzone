@@ -227,11 +227,11 @@ class Spy(object):
                              user='',
                              passwd='',
                              db='',
-                             charset='utf8mb4')   #填写数据库，请预先建立好数据库
+                             charset='utf8mb4')   #填写数据库，请预先建立好数据库，并在该数据库下建立一个表格
         cursor = db.cursor()
 
     def sqlinsert(self, data):   #数据库写入函数
-        table = 'everyday'
+        table = ''#表格名称
         keys = ','.join(data.keys())
         values = ','.join(['%s'] * len(data))
         sql = 'insert into {table}({keys}) values({values})'.format(table=table, keys=keys, values=values)
